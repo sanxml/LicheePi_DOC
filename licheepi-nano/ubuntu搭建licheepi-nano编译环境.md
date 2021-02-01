@@ -46,7 +46,7 @@ tar -xvf licheepi_nano_dl.tar.gz -C ./buildroot-licheepi/
 ```
 
 ``` shell
-git clone --recursive https://github.com/QinYUN575/buildroot-licheepi
+git clone --recursive https://github.com/sanxml/buildroot-licheepi
 cd buildroot-licheepi
 make sipeed_lichee_nano_defconfig
 #make menuconfig
@@ -56,7 +56,7 @@ make -j10
 ### sunxi-tools
 
 ``` shell
-git clone --recursive https://github.com/QinYUN575/sunxi-tools.git
+git clone --recursive https://github.com/sanxml/sunxi-tools.git
 cd sunxi-tools/
 git checkout f1c100s-spiflash
 make

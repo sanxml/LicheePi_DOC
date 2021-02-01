@@ -7,9 +7,9 @@
 
 - 获取licheepi-nano镜像，并将主机驱动共享到容器
   ```shell
-  docker pull sanxml/licheepi-nano:v1 # 获取镜像
+  docker pull sanxml/lichee-nano # 获取镜像
   # 这里使用--privileged共享主机上的驱动程序，即可以直接通过 docker 使用 sunxi-tools 烧录镜像
-  docker run -t -i --privileged -v /dev/bus/usb:/dev/bus/usb sanxml/licheepi-nano:v1  # 生成一个可执行的新容器
+  docker run -t -i --privileged -v /dev/bus/usb:/dev/bus/usb sanxml/lichee-nano  # 生成一个可执行的新容器
   ```
 
 - 获取的镜像已经帮我们搭建好了编译环境,下面直接进行编译
