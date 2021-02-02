@@ -72,6 +72,33 @@
 
   使用 `putty` 或者 `minicom` 等串口终端工具调试，默认登录账号为：root，密码为空
 
+
+### 5. xboot
+
+  XBOOT不仅仅是一款功能强大、可移植性强、代码复用率高的嵌入式系统bootloader，而且还是一款SOC片上系统应用软件执行引擎，无需复杂的操作系统，APP上电直接执行。
+
+  不同于上面介绍所用的u-boot，xboot无需配置，下面介绍如何快速上手。
+
+  安装好 docker 后，获取 xboot 镜像
+
+  ``` shell
+  docker pull sanxml/lichee-nano:xboot # 获取镜像
+  docker run -t -i --privileged -v /dev/bus/usb:/dev/bus/usb sanxml/lichee-nano:xboot  # 生成一个可执行的新容器
+  ```
+  ``` shell
+  sunxi-fel ver # 检验是否是否进入fel模式
+  sunxi-fel -p spiflash-write 0 ~/xboot/output/xboot.bin # 烧录镜像
+  ```
+
+  连上usb转串口，打开串口终端工具
+  ![](../assets/2021-02-02_18-38.png)
+
+  ``` shell
+  cd application
+  ./sun # 运行例子，可以连上屏幕查看哦
+  ```
+
+
 ### 报错及解决办法
 
 1. 运行 make menuconfig 时，报错 `Unable to find the ncurses libraries or the required header files.`
