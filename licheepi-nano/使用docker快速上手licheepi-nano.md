@@ -61,6 +61,17 @@
 
   待补充
 
+### 4. 简单上手使用
+
+  成功烧录程序后，需要进行系统调试
+
+  Nano 的系统调试串口是 UART0 ，即板子丝印上的的 “U0：Tx Rx” 标识的两个引脚。
+
+  使用usb转ttl模块，连接如下图所示：
+  ![](../assets/微信图片_20210201180317.jpg)
+
+  使用 `putty` 或者 `minicom` 等串口终端工具调试，默认登录账号为：root，密码为空
+
 ### 报错及解决办法
 
 1. 运行 make menuconfig 时，报错 `Unable to find the ncurses libraries or the required header files.`
@@ -90,3 +101,8 @@
   #include <uuid.h>
   #endif */
   ```
+
+4. 烧录时，报错：ERROR: Allwinner USB FEL device not found!
+
+  如果flash已经烧录过程序了，需要先短接1，4脚再上电，进入下载模式，如下所示
+  ![](../assets/微信图片_20210201180324.jpg)
